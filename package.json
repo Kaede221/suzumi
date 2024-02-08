@@ -1,0 +1,24 @@
+{
+  "name": "suzumi-api-nodejs",
+  "version": "1.0.0",
+  "description": "NodeJS版本的SuzumiAPI，重构后方便部署到服务器中",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node index.js"
+  },
+  "keywords": [
+    "Suzumi",
+    "API",
+    "图片"
+  ],
+  "author": "Kaede",
+  "license": "MIT",
+  "dependencies": {
+    "config-yml": "^0.10.3",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "random": "^4.1.0"
+  }
+}
