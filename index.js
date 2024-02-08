@@ -11,7 +11,7 @@ app.get('/direct', (req, res) => {
     const query = req.query
     const r18 = query.r18 || config.app.r18
     const proxy = query.proxy || config.app.proxy
-    const tag = query.proxy || true
+    const tag = query.tag || true
     res.redirect(kaede.getRandLink(jsonData, proxy, r18, tag))
 })
 
@@ -19,7 +19,7 @@ app.get('/direct', (req, res) => {
 app.get('/json', (req, res) => {
     const query = req.query
     const r18 = query.r18 || config.app.r18
-    const tag = query.proxy || true
+    const tag = query.tag || true
     const num = query.num || config.app.num
     res.json(kaede.getRandJson(jsonData, r18, tag, num))
 })
@@ -30,7 +30,7 @@ app.all('/', (req, res) => {
     const query = req.query
     const r18 = query.r18 || config.app.r18
     const proxy = query.proxy || config.app.proxy
-    const tag = query.proxy || true
+    const tag = query.tag || true
     const num = query.num || config.app.num
 
     // 根据具体情况进行判断

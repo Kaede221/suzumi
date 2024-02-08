@@ -22,7 +22,7 @@ function getRandLink(jsonData, proxy, r18, tag) {
 
     // 判断r18和tags，进行筛选，获得链接
     jsonData.forEach(element => {
-        if ((element['r18'] == r18) || r18 == 3 && tag || element['tags'].includes(tag)) {
+        if ((element['r18'] == r18) || r18 == 2 && tag || element['tags'].includes(tag)) {
             // 直接加入列表就好
             urlList.push(element['url'])
         }
@@ -43,7 +43,7 @@ function getRandJson(jsonData, r18, tag, num) {
 
     // 先进行筛选
     jsonData.forEach(element => {
-        if ((element['r18'] == r18) || r18 == 3 && tag || element['tags'].includes(tag)) {
+        if ((element['r18'] == r18) || r18 == 2 && tag || element['tags'].includes(tag)) {
             // 直接加入列表就好
             objectList.push(element)
         }
