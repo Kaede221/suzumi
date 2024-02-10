@@ -5,7 +5,5 @@ app:
   port: 4500
   # 默认代理地址，必须有https前缀，否则无作用
   proxy: "https://i.pixiv.re"
-  # 默认r18选项
-  r18: 0
-  # 默认的请求json次数
+  # JSON默认请求次数
   num: 1
