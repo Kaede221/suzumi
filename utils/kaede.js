@@ -15,6 +15,12 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // 不包含最大值，包含最小值
 }
 
+// 根据数组，判断是否有交集 有就是true，没有就是false
+function haveIntersection(arr1, arr2) {
+    let set1 = new Set(arr1);
+    return arr2.some(value => set1.has(value));
+}
+
 // 写一个筛选器出来
 // 传入一个K-Data，根据规则进行筛选，返回视情况而定
 // 默认参数
@@ -23,9 +29,8 @@ function getRandomInt(min, max) {
 // - uid string 根据具体作者进行筛选
 // - keyword string 可以查找作品名称中以及tags中的关键字
 function dataFilter(kData, r18 = 0, tag = null, uid = null, keyword = null) {
-    // 为了看起来方便，我还是用连续的if吧
     if (kData['r18'] == r18) {
-        if (tag == null || kData['tags'].includes(tag)) {
+        if (tag == null || haveIntersection(kData['tags'], tag.split("|"))) {
             if (uid == null || parseInt(kData['uid']) == uid) {
                 if (keyword == null || kData['tags'].includes(keyword) || kData['title'].includes(keyword)) {
                     return kData

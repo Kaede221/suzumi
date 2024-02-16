@@ -97,6 +97,8 @@ https://127.0.0.1:4500/
 https://suzumi.hikai.top/direct?tags=genshin
 ```
 
+还可以使用`|`进行分割，这个符号代表`或者`，即假设我访问`http://127.0.0.1:4500/?r18=1&tag=genshin|arknights`，那么查询的就是Arknights的或者Genshin的图片√，很好理解吧
+
 ### proxy
 
 代理地址，允许自己进行修改，只要是pixiv的代理地址就可以√
