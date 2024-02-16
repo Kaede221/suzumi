@@ -29,14 +29,13 @@ function haveIntersection(arr1, arr2) {
 // - uid string 根据具体作者进行筛选
 // - keyword string 可以查找作品名称中以及tags中的关键字
 function dataFilter(kData, r18 = 0, tag = null, uid = null, keyword = null) {
-    if (kData['r18'] == r18) {
-        if (tag == null || haveIntersection(kData['tags'], tag.split("|"))) {
-            if (uid == null || parseInt(kData['uid']) == uid) {
-                if (keyword == null || kData['tags'].includes(keyword) || kData['title'].includes(keyword)) {
-                    return kData
-                }
-            }
-        }
+    if (
+        (kData['r18'] == r18) &&
+        (tag == null || haveIntersection(kData['tags'], tag.split("|"))) &&
+        (uid == null || parseInt(kData['uid']) == uid) &&
+        (keyword == null || kData['tags'].includes(keyword) || kData['title'].includes(keyword))
+    ) {
+        return kData
     }
     return false
 }
