@@ -1,6 +1,9 @@
 # Kaede个人文件
 # 不上传data文件
 data/
+data.json
+venv/
+.venv/
 
 # Logs
 logs
