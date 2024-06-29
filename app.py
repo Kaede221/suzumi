@@ -2,10 +2,10 @@ from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 import os
 import json
-import utils as utils
+from kaede import utils as utils
 
 # 读取配置文件
-with open('config.json', 'r', encoding='utf-8') as f:
+with open('kaede/config.json', 'r', encoding='utf-8') as f:
     config = json.loads(f.read())
 
 # 初始化

@@ -2,9 +2,7 @@
 在这里实现一些需要的方法
 """
 from urllib import parse
-import random, json
-
-import app
+import random
 
 
 def use_proxy(origin_url: str, proxy: str) -> str:
@@ -49,10 +47,10 @@ def data_filter(data: dict, r18: bool, tag: str, uid: str, keyword: str):
     """
     if (
             (data['r18'] is r18) and
-            (tag is None or have_intersection(data['tags'], tag.split('|'))) and
-            (uid is None or int(data['uid']) is uid) and
+            (tag == "" or have_intersection(data['tags'], tag.split('|'))) and
+            (uid == "" or int(data['uid']) is uid) and
             (
-                    (keyword is None) or
+                    (keyword == "") or
                     (keyword in data['tags']) or
                     (keyword in data['title'])
             )
@@ -80,7 +78,7 @@ def get_random_link(data: list, proxy: str, r18: bool, tag: str, uid: str, keywo
 
     # 判断是否为空
     if len(url_list) == 0:
-        return 'Sorry, But I found nothing here~'
+        return '404.html'
 
     return use_proxy(url_list[get_random_integer(0, len(url_list))], proxy)
 
@@ -104,12 +102,3 @@ def get_random_json(data: list, r18: bool, tag: str, num: int, uid: str, keyword
 
     # 返回即可
     return final_list
-
-
-if __name__ == '__main__':
-    with open('data.json', 'r', encoding='UTF-8') as db:
-        # 这里的main_data获取过来是一个数组，每一个元素都是一个对象，包含内容看文档
-        main_data = json.loads(db.read())
-    get_random_link(main_data, app.default_proxy, app.default_r18, app.default_tag, app.default_uid,
-                    app.default_keyword)
-    pass
