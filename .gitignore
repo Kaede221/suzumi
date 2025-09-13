@@ -4,6 +4,7 @@ data/
 kaede/data.json
 venv/
 .venv/
+.idea/
 
 # Logs
 logs

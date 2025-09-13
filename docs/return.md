@@ -22,7 +22,6 @@ https://i.jitsu.top/img-original/img/2018/12/21/00/11/28/72203964_p0.jpg
         "uid": "78823052",
         "title": "artoria pendragon",
         "author": "Emmanuel costa",
-        "r18": 0,
         "width": 512,
         "height": 768,
         "tags": [

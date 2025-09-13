@@ -1,7 +1,7 @@
-from fastapi import FastAPI
-from fastapi.responses import RedirectResponse
 import os
 import json
+from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 from kaede import utils as utils
 
 # 读取配置文件
